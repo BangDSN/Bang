@@ -21,21 +21,37 @@
 
     <main id="home-page" class="page active">
         <header class="hero">
-            <div class="hero-content">
+            <div class="hero-content reveal">
                 <span class="badge">Tilgængelig for projekter</span>
                 <h1>Jeg skaber digitale <br><span class="gradient-text">oplevelser.</span></h1>
-                <p>Fullstack udvikler med fokus på minimalistisk design, 3D-modellering og grafisk identitet.</p>
+                <p>Fullstack udvikler med fokus på minimalistisk design, 3D-modellering i Blender og grafisk identitet.</p>
                 <div class="hero-btns">
                     <button onclick="showPage('work')" class="btn-primary">Se projekter</button>
-                    <button onclick="document.getElementById('om-teaser').scrollIntoView({behavior: 'smooth'})" class="btn-secondary">Læs mere</button>
+                    <button onclick="document.getElementById('skills-section').scrollIntoView({behavior: 'smooth'})" class="btn-secondary">Mine skills</button>
                 </div>
             </div>
         </header>
 
-        <section id="om-teaser" class="container">
+        <section id="skills-section" class="container reveal">
+            <h2 class="section-title">Værktøjskassen</h2>
+            <div class="skills-grid">
+                <div class="skill-item"><span>Blender</span></div>
+                <div class="skill-item"><span>HTML/CSS</span></div>
+                <div class="skill-item"><span>JavaScript</span></div>
+                <div class="skill-item"><span>VS Code</span></div>
+                <div class="skill-item"><span>UI Design</span></div>
+                <div class="skill-item"><span>Logo Design</span></div>
+            </div>
+        </section>
+
+        <section id="om-teaser" class="container reveal">
             <div class="about-box">
                 <h2 class="section-title">Kreativitet & Kode</h2>
                 <p>Jeg kombinerer 3D-art fra Blender med moderne webudvikling. Mit fokus ligger på at skabe unikke visuelle identiteter og funktionelle web-løsninger.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/designsbybang/" target="_blank">Instagram</a>
+                    <a href="https://github.com/bangdsn" target="_blank">GitHub</a>
+                </div>
             </div>
         </section>
     </main>
@@ -48,51 +64,41 @@
             </header>
             
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card reveal">
                     <div class="card-image" style="background-image: url('img/hammer.png');"></div>
-                    <div class="card-info">
-                        <span>3D Modellering</span>
-                        <h3>Blender Hammer</h3>
-                        <p>Detaljeret 3D-model udført med fokus på realistiske teksturer.</p>
-                    </div>
+                    <div class="card-info"><span>3D Model</span><h3>Blender Hammer</h3></div>
                 </div>
-
-                <div class="project-card">
+                <div class="project-card reveal">
                     <div class="card-video">
                         <video autoplay loop muted playsinline>
                             <source src="video/0001-0100.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <div class="card-info">
-                        <span>3D Animation</span>
-                        <h3>Blender Loop</h3>
-                        <p>Flydende animation renderet direkte fra Blender.</p>
-                    </div>
+                    <div class="card-info"><span>3D Animation</span><h3>Blender Loop</h3></div>
+                </div>
+                <div class="project-card reveal">
+                    <div class="card-image" style="background-image: url('img/watch.png');"></div>
+                    <div class="card-info"><span>3D Model</span><h3>Nintendo Switch</h3></div>
+                </div>
+                <div class="project-card reveal">
+                    <div class="card-image" style="background-image: url('img/55521.png');"></div>
+                    <div class="card-info"><span>3D Model</span><h3>Baseball Bat & Axe</h3></div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card reveal">
                     <div class="card-image" style="background-image: url('img/f7.png');"></div>
-                    <div class="card-info">
-                        <span>Grafisk Design</span>
-                        <h3>Tsuru University</h3>
-                        <p>Visuel identitet designet til et japansk universitet.</p>
-                    </div>
+                    <div class="card-info"><span>Logo</span><h3>Tsuru University</h3></div>
                 </div>
-
-                <div class="project-card">
+                <div class="project-card reveal">
                     <div class="card-image" style="background-image: url('img/Spilophøne.png');"></div>
-                    <div class="card-info">
-                        <span>UI Design</span>
-                        <h3>Spilophøne</h3>
-                        <p>Grafisk koncept og identitet til legende universer.</p>
-                    </div>
+                    <div class="card-info"><span>Branding</span><h3>Spilophøne</h3></div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Tobias Bang.</p>
+        <p>&copy; 2026 Tobias Bang. Bygget med fokus på detaljen.</p>
     </footer>
 
     <script src="script.js"></script>

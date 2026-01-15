@@ -11,12 +11,12 @@
 body {
     background-color: var(--shadow-grey);
     color: var(--seashell);
-    overflow-x: hidden;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* SPA Side-skift */
-.page { display: none; animation: fadeIn 0.4s ease-out; }
+/* Side navigation logik */
+.page { display: none; min-height: 80vh; animation: fadeIn 0.4s ease-out; }
 .page.active { display: block; }
 
 @keyframes fadeIn {
@@ -24,7 +24,7 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Navigation */
+/* Navbar */
 .navbar {
     display: flex; justify-content: space-between; align-items: center;
     padding: 1.5rem 10%; position: sticky; top: 0;
@@ -39,22 +39,37 @@ body {
 .nav-links a { text-decoration: none; color: var(--seashell); opacity: 0.6; transition: 0.3s; }
 .nav-links a.active, .nav-links a:hover { opacity: 1; color: var(--tangerine); }
 
-.nav-btn { background: var(--strawberry); padding: 0.6rem 1.4rem; border-radius: 6px; color: white !important; opacity: 1 !important; }
-
-/* Hero */
+/* Hero & Knapper */
 .hero { height: 80vh; display: flex; align-items: center; padding: 0 10%; }
 .gradient-text {
     background: linear-gradient(135deg, var(--strawberry), var(--tangerine));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    font-size: clamp(3rem, 8vw, 5rem); font-weight: 800;
+    font-size: clamp(3rem, 8vw, 5rem); font-weight: 800; line-height: 1.1;
 }
 
 .hero-btns { display: flex; gap: 1rem; margin-top: 2rem; }
-button { border: none; cursor: pointer; padding: 0.8rem 1.8rem; border-radius: 6px; font-weight: 600; transition: 0.3s; }
-.btn-primary { background: var(--strawberry); color: white; }
-.btn-secondary { background: transparent; border: 1px solid var(--graphite); color: white; }
+button, .nav-btn, .btn-primary, .btn-secondary {
+    border: none; cursor: pointer; padding: 0.8rem 1.8rem; border-radius: 6px;
+    font-weight: 600; font-size: 1rem; transition: 0.3s; text-decoration: none; display: inline-block;
+}
 
-/* Grid & Kort */
+.btn-primary, .nav-btn { background: var(--strawberry); color: white; }
+.btn-secondary { background: transparent; border: 1px solid var(--graphite); color: white; }
+button:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+/* Skills & Social Links */
+.skills-grid { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+.skill-item {
+    background: var(--graphite); padding: 0.8rem 1.5rem; border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.1); font-weight: 600; transition: 0.3s;
+}
+.skill-item:hover { border-color: var(--strawberry); transform: scale(1.05); }
+
+.social-links { margin-top: 2rem; display: flex; gap: 2rem; }
+.social-links a { color: var(--tangerine); text-decoration: none; font-weight: 600; transition: 0.3s; border-bottom: 2px solid transparent; }
+.social-links a:hover { border-bottom-color: var(--strawberry); }
+
+/* Grid & Cards */
 .container { max-width: 1200px; margin: 5rem auto; padding: 0 2rem; }
 .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
 
@@ -62,15 +77,17 @@ button { border: none; cursor: pointer; padding: 0.8rem 1.8rem; border-radius: 6
     background: var(--graphite); border-radius: 15px; overflow: hidden;
     transition: 0.3s; border: 1px solid rgba(255,255,255,0.05);
 }
+.project-card:hover { transform: translateY(-10px); border-color: var(--strawberry); }
+.project-card:hover h3 { color: var(--strawberry); }
 
 .card-image, .card-video { height: 250px; background-size: cover; background-position: center; overflow: hidden; }
 .card-video video { width: 100%; height: 100%; object-fit: cover; }
-
 .card-info { padding: 1.5rem; }
 .card-info span { color: var(--strawberry); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
 
-.about-box { background: rgba(68, 65, 64, 0.2); padding: 4rem; border-radius: 20px; text-align: center; }
-footer { text-align: center; padding: 4rem; opacity: 0.4; }
+.badge { border: 1px solid var(--strawberry); color: var(--strawberry); padding: 0.4rem 1rem; border-radius: 30px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1.5rem; display: inline-block; }
+.about-box { background: rgba(68, 65, 64, 0.2); padding: 4rem; border-radius: 20px; }
+footer { text-align: center; padding: 4rem; opacity: 0.4; border-top: 1px solid rgba(255,255,255,0.05); }
 
 .blob-bg {
     position: fixed; top: -100px; right: -100px; width: 500px; height: 500px;
