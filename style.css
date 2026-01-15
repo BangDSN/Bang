@@ -1,0 +1,287 @@
+/* 1. VARIABLER & GRUNDLÆGGENDE OPSÆTNING */
+:root {
+    --strawberry: #E54B4B;
+    --tangerine: #FFA987;
+    --seashell: #F7EBE8;
+    --graphite: #444140;
+    --shadow-grey: #1E1E24;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--shadow-grey);
+    color: var(--seashell);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 2. BAGGRUNDSEFFEKTER */
+.blob-bg {
+    position: fixed;
+    top: -100px;
+    right: -100px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(229, 75, 75, 0.12) 0%, transparent 70%);
+    z-index: -1;
+    filter: blur(80px);
+}
+
+/* 3. NAVIGATION */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    position: sticky;
+    top: 0;
+    background: rgba(30, 30, 36, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(247, 235, 232, 0.05);
+    z-index: 1000;
+}
+
+.logo { 
+    font-weight: 800; 
+    font-size: 1.4rem; 
+    letter-spacing: -0.5px; 
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--seashell);
+}
+
+.logo span { color: var(--strawberry); }
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 2.5rem; 
+    align-items: center;
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--seashell); 
+    font-weight: 500; 
+    opacity: 0.7; 
+    transition: var(--transition); 
+}
+
+.nav-links a:hover, .nav-links a.active { 
+    opacity: 1; 
+    color: var(--tangerine); 
+}
+
+.nav-btn { 
+    background: var(--strawberry); 
+    padding: 0.6rem 1.4rem; 
+    border-radius: 6px; 
+    color: white !important; 
+    opacity: 1 !important; 
+    transition: var(--transition);
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229, 75, 75, 0.3);
+}
+
+/* 4. LAYOUT CONTAINERS */
+.container { 
+    max-width: 1100px; 
+    margin: 8rem auto; 
+    padding: 0 2rem; 
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+/* 5. HERO SEKTION */
+.hero { 
+    height: 85vh; 
+    display: flex; 
+    align-items: center; 
+    padding: 0 10%; 
+}
+
+.hero-content { max-width: 800px; }
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--strawberry), var(--tangerine));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: clamp(3rem, 10vw, 5.5rem); 
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.badge {
+    border: 1px solid var(--strawberry);
+    color: var(--strawberry);
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.hero p { 
+    font-size: 1.25rem; 
+    margin: 2rem 0 3rem; 
+    opacity: 0.8; 
+    max-width: 600px; 
+}
+
+/* 6. KNAPPER */
+.hero-btns { display: flex; gap: 1.5rem; }
+
+.btn-primary, .btn-secondary {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--strawberry);
+    color: white;
+}
+
+.btn-secondary {
+    border: 1px solid var(--graphite);
+    color: var(--seashell);
+}
+
+.btn-primary:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 25px rgba(229, 75, 75, 0.3); 
+}
+
+.btn-secondary:hover { 
+    background: var(--graphite); 
+    transform: translateY(-3px);
+}
+
+/* 7. PROJEKT KORT */
+.section-title { 
+    font-size: 2.5rem; 
+    margin-bottom: 3.5rem; 
+    font-weight: 800; 
+}
+
+.project-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 2.5rem; 
+}
+
+.project-card {
+    background: var(--graphite);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.project-card:hover { 
+    transform: translateY(-12px); 
+    border-color: var(--tangerine);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.card-image { 
+    height: 250px; 
+    background: #2a2a2e; /* Midlertidig farve indtil du indsætter billeder */
+    transition: var(--transition);
+}
+
+.project-card:hover .card-image {
+    filter: brightness(1.1);
+}
+
+.card-info { padding: 2.2rem; }
+
+.card-info span { 
+    color: var(--tangerine); 
+    font-size: 0.75rem; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+.card-info h3 { 
+    margin: 0.8rem 0; 
+    font-size: 1.6rem; 
+    color: var(--seashell);
+}
+
+.card-info p {
+    color: rgba(247, 235, 232, 0.7);
+    font-size: 1rem;
+}
+
+/* 8. OM MIG BOKS */
+.about-box { 
+    background: rgba(68, 65, 64, 0.2); 
+    padding: 5rem; 
+    border-radius: 30px; 
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+.about-box p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    opacity: 0.85;
+}
+
+/* 9. FOOTER */
+footer { 
+    text-align: center; 
+    padding: 6rem 2rem; 
+    opacity: 0.4; 
+    font-size: 0.9rem; 
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 5rem;
+}
+
+/* 10. ANIMATIONER (REVEAL ON SCROLL) */
+.reveal { 
+    opacity: 0; 
+    transform: translateY(40px); 
+    transition: all 1s ease-out; 
+}
+
+.reveal.active { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* 11. MOBIL OPTIMERING */
+@media (max-width: 768px) {
+    .navbar { padding: 1.2rem 5%; }
+    .nav-links { display: none; } /* Her kunne du tilføje en mobil-menu senere */
+    .hero { padding: 0 5%; text-align: center; }
+    .hero-content { margin: 0 auto; }
+    .hero-btns { justify-content: center; flex-direction: column; }
+    .gradient-text { font-size: 3.5rem; }
+    .container { margin: 5rem auto; }
+    .about-box { padding: 2.5rem; }
+}
